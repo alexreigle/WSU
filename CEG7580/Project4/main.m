@@ -14,20 +14,14 @@ path = pwd;
     im4_40a = imread(im4_40a_path);
     
     im4_40a_Spectra = fft2dFilter(cast(im4_40a, 'double'), size(im4_40a,1), size(im4_40a,2), 0, 0, 0, 0, "return spectrum");
-    im4_40a_SpectraDB = 20*log10(sqrt(real(im4_40a_Spectra).^2 + imag(im4_40a_Spectra).^2));
     
 % (b) Display the spectrum
     figure(2); hold on; title('Image 4.40a Fourier Spectrum');
-    
-    tempImage = ifftshift(im4_40a_SpectraDB);
-    tempImage2 = (tempImage(1:size(im4_40a,1),1:size(im4_40a,2)));
-    centeredImage4_40aSpectra = tempImage2;
-    
-    imshow(cast(abs(im4_40a_SpectraDB), 'uint8'));
-    % imshow(cast(centeredImage4_40aSpectra, 'uint8'));
+    imshow(cast(abs(im4_40a_Spectra), 'uint8'));
+   
     
 % (c) Compute the average value of the spectra from 2(a)
-    avgIm4_40a = mean(mean(im4_40a_SpectraDB));
+    avgIm4_40a = mean(mean(im4_40a_Spectra));
     disp(avgIm4_40a);
     
     answer = questdlg(['The average value of Image 4.40a is ', num2str(avgIm4_40a)], ...
@@ -94,8 +88,8 @@ path = pwd;
     im4_55a = imread(im4_55a_path);
     im4_55a = cast(im4_55a, 'double');
     
-    % The text describes use of Do = 50 and Nb = 4
-    [im4_55b] = fft2dFilter(im4_55a, size(im4_55a,1), size(im4_55a,2), 0, 0, 50, 4, "Butterworth HP");
+    % The text describes use of Do = 50
+    [im4_55b] = fft2dFilter(im4_55a, size(im4_55a,1), size(im4_55a,2), 0, 0, 50, 0, "Gaussian HP");
     
     % Binary Thresholding (employed in text)
     im4_55c = binaryThreshold(im4_55b);
@@ -148,7 +142,7 @@ function [imageFFT] = fft2dFilter(image, M, N, m, n, Do, Nb, filter)
     [v, u] = meshgrid(1:2*P, 1:2*Q);
     Duv = sqrt( (u-(P+m)).^2 + (v-(Q+n)).^2 );
     if(~isempty(regexp(filter, 'return spectrum')))%filter == "return spectrum")
-        imageFFT = imageB;
+        imageFFT = 20*log10(sqrt(real(imageB).^2 + imag(imageB).^2));
         return;
     elseif(~isempty(regexp(filter, 'Ideal')))
         H = zeros(size(Duv,1),size(Duv,2));
