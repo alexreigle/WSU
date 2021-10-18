@@ -270,9 +270,9 @@ apprDWT = appcoef2(DWT, S, 'haar', J);
 
 imageRange = max(max(image))-min(min(image));
 % scaledDWT = scalePixelValues(DWT, imageRange);
-sVertDWT = scalePixelValues(256.*vertDWT, imageRange);
-sHorzDWT = scalePixelValues(256.*horzDWT, imageRange);
-sDiagDWT = scalePixelValues(256.*diagDWT, imageRange);
+sVertDWT = scalePixelValues(vertDWT, imageRange);
+sHorzDWT = scalePixelValues(horzDWT, imageRange);
+sDiagDWT = scalePixelValues(diagDWT, imageRange);
 sApprDWT = scalePixelValues(apprDWT, imageRange);
 
 end
