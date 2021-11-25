@@ -40,9 +40,9 @@ im10_35a_path = [path, filesep, 'Fig1035(a)(noisy_fingerprint).tif'];
 im10_35a = imread(im10_35a_path);
 
 % % Using MatLab Built-In Functions
-% [im10_35a_counts, ~] =imhist(im10_35a);
-% im10_35a_threshold = otsuthresh(im10_35a_counts);
-% im10_35a_globalThresh = imbinarize(im10_35a, im10_35a_threshold);
+    % [im10_35a_counts, ~] =imhist(im10_35a);
+    % im10_35a_threshold = otsuthresh(im10_35a_counts);
+    % im10_35a_globalThresh = imbinarize(im10_35a, im10_35a_threshold);
 
 % Using Functions I've written
 [im10_35a_autoThresh] = autoThreshold(im10_35a);
@@ -89,7 +89,7 @@ im9_16a_thick_boundary = extractBoundary(im9_16a, 1); % Thick boundary
 
 figure(4);
 subplot(1,3,1); imshow(im9_16a);                title('Original');
-subplot(1,3,2); imshow(im9_16a_thin_boundary);  title('Boundary from Erosion');
+subplot(1,3,2); imshow(im9_16a_thin_boundary);  title('Boundary from Eqn. 9-18');
 subplot(1,3,3); imshow(im9_16a_thick_boundary); title('Boundary from Dilation & Erosion');
 
 % Probelm 5: Connected Components
@@ -100,25 +100,44 @@ subplot(1,3,3); imshow(im9_16a_thick_boundary); title('Boundary from Dilation & 
 im9_20a_path = [path, filesep, 'Fig0920(a)(Chickenfilet with bones).tif'];
 im9_20a = imread(im9_20a_path);
 
-im9_20a_boundary = extractBoundary(im9_20a, 1);
-
-[im9_20a_connections, im9_20a_numConnections] = connectedComponents(im9_20a_boundary);
+% Trial and Error let me to conclude a threshold = 215 most closely
+% represents Figure 9.20(c)
+[im9_20a_table, im9_20a_binary, im9_20a_eroded] = connectedComponents(im9_20a, 203);
  
-titleStr = ['Figure 9.20a Boundary (with ', num2str(im9_20a_connections), ' connections)'];
+titleStr = ['Figure 9.20a Boundary (with ', num2str(size(im9_20a_table,1)), ' connections)'];
 figure(5); 
-subplot(1,2,1); imshow(im9_20a); title('Figure 9.20a');
-subplot(1,2,2); imshow(im9_20a_boundary); title(titleStr);
+subplot(1,3,1); imshow(im9_20a); title('Figure 9.20a');
+subplot(1,3,2); imshow(not(im9_20a_binary)); title('Binary Image (Threshold = 203)');
+subplot(1,3,3); imshow(im9_20a_eroded); title(titleStr);
+
+figure(51); uitable('Data', im9_20a_table{:,:}, 'ColumnName', im9_20a_table.Properties.VariableNames);
+
 end
 
-function [numConnections, connectedVec] = connectedComponents(boundary)
+function [T, binIm, erodedIm] = connectedComponents(image, threshold)
 
-    connections = bwconncomp(boundary);
+
+    [binIm] = binaryThreshold(image, threshold);
     
-    % This assumes that there is one connected boundary. Additional
-    % generalization could be acheived by checking the number of objects
-    % and sweeping through that number of pixel lists.
-    connectedVec = connections.PixelIdxList{1,1};
-    numConnections = length(connectedVec);
+    mask = strel('square', 5);
+    erodedIm = imerode(binIm, mask);
+
+    connections = bwconncomp(erodedIm);
+    
+    erodedIm = and(binIm, not(erodedIm));
+    
+    nObj = connections.NumObjects;
+    
+    tableData = zeros(nObj, 1);
+    
+    for i = 1:nObj
+        tableData(i,1) = i;     % Object Number
+        tableData(i,2) = length(connections.PixelIdxList{i}); % Number of Connected Pixels
+    end
+    
+    T = table(tableData(1:end,1), tableData(1:end,2));
+    T.Properties.VariableNames = {'Connected component';'No. of pixels in connected comp'};
+    
 end
 
 function [boundaryIm] = extractBoundary(image, borderType)
@@ -131,7 +150,7 @@ function [boundaryIm] = extractBoundary(image, borderType)
     % Square imppllies a 3x3 mask size
     eroded_image = imerode(image, mask);
     
-    thinBoundary_image = image - eroded_image;
+    thinBoundary_image = and(image, not(eroded_image));
     
     dilated_image = imdilate(image, mask);
     
@@ -184,12 +203,6 @@ function [threshold] = autoThreshold(image)
         T(3) = T(1)-T(2);
         T(2) = T(1);
         T(1) = 0.5*(mG1+mG2);
-        
-        breaker = breaker+1;
-        if(breaker > 1000000)
-            break
-            disp('Ya fucked up');
-        end
     end
     
     threshold = T(1);
