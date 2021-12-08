@@ -26,6 +26,9 @@ n = 2.5;      % n (little n) is the degree of the Gegenbauer polynomial which is
 alpha = 1.5;
 
 x = linspace(-1,1, 256);
+
+testGegenBauerPoly(x, alpha);
+
 g = gegenbauerCoef(x, alpha, n);
 
 % Test Signal f1
@@ -498,7 +501,20 @@ function [imageFFT] = fourierSpectra(image, M, N)
         P = Q;
     end
 
-    zeroPaddedImage = zeros(2*P,2*Q);
     imageFFT = 20*log10(sqrt(real(fft2(fftshift(image))).^2 + imag(fft2(fftshift(image))).^2));
 end
     
+function [] = testGegenBauerPoly(x, alpha)
+    g1 = gegenbauerCoef(x, alpha, 1);
+    g2 = gegenbauerCoef(x, alpha, 2);
+    g3 = gegenbauerCoef(x, alpha, 3);
+    g4 = gegenbauerCoef(x, alpha, 4);
+    g5 = gegenbauerCoef(x, alpha, 5);
+
+    figure(999); hold on;
+    plot(g1);
+    plot(g2);
+    plot(g3);
+    plot(g4);
+    plot(g5);
+end
