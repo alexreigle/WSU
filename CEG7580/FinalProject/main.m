@@ -69,7 +69,7 @@ end
     subplot(1,3,2); plot(dct_ft);   title('DCT of Trunc. Sig. Ft');
     subplot(1,3,3); plot(idct_ft);  title('IDCT Reconstruction of Ft');
 
-%% %%%%%%% Incorrect Usage because seeding f1 into the Gegenbauer Poly violates the linear combination condition %%%%%%%%%%%%
+%% %%%%%%% Incorrect Usage of Gegenbauer %%%%%%%%%%%%
 %     % Gegenbauer processing of Signal f1 (without Compression/Truncation)
 %     gegWorking = gegenbauerCoef(f1, alpha, n);     % Works for alpha = 1.5; n1 = 2.01-2.99
 %     dctGegWorking = dctCoef(gegWorking);
@@ -382,10 +382,10 @@ end
     subplot(2,3,6); imshow(cast(sig2im(pout_out_noisyn10_reconstruct,Pm,Pn), 'uint8'));   title('Reconstructed Image w/ -10dB SNR after Noise Injection');
 
     rmsePout = 0.*poutSig;
-    rmsePout_Noise = rmseMoon;
+    rmsePout_Noise = poutSig;
     for i = 1:length(poutSig)
         rmsePout(i) = rootMeanSquareError(poutSig(i), pout_reconstruct(i));
-        rmsePout_Noise(i) = rootMeanSquareError(pout_reconstruct(i), pout_out_noisyn10_reconstruct(i));
+        rmsePout_Noise(i) = rootMeanSquareError(pout_reconstruct(i), pout_out_noisy10_reconstruct(i));
     end
     
     figure(72);

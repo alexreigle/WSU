@@ -1,42 +1,23 @@
 
 x = linspace(-1,1, 256);
-
-cameraman = imread('cameraman.tif');
-camSignal = im2sig(cameraman);
-dct3 = dct(cast(camSignal, 'double'), 'Type',2);
-cameraman_noisy = truncateSig(dct3);
-cameraman_noisy = idct(cameraman_noisy);
-f3 = sig2im(cameraman_noisy, size(cameraman,1), size(cameraman,2));
-
-[rpm, f4] = lp_prm( sparse(cast(f3, 'double')) );
-
 n = 2.5;
 alpha = 1.5;
 
-% Test Signal f1
-f1 = linspace(-1,1,256);
-for i = 1:length(f1)
-    if (f1(i) <= 0)
-        f1(i) = -1 - f1(i);
-    else
-        f1(i) = ( 1 - f1(i) )^5;
-    end
-end
-
-d1 = dct(f1); 
-d1( (0.5*length(d1)) : (end) ) = 0;
-fG = idct(d1);
-smoothBoi = supressGibbs(fG);
-fuck = imgaussfilt(fG, 1.75);
-
-
-g1 = gegenbauerCoef(f1, alpha, 1);
-g2 = gegenbauerCoef(f1, alpha, 2);
-g3 = gegenbauerCoef(f1, alpha, 3);
-g4 = gegenbauerCoef(f1, alpha, 4);
-g5 = gegenbauerCoef(f1, alpha, 5);
+g1 = gegenbauerCoef(x, alpha, 1);
+g2 = gegenbauerCoef(x, alpha, 2);
+g3 = gegenbauerCoef(x, alpha, 3);
+g4 = gegenbauerCoef(x, alpha, 4);
+g5 = gegenbauerCoef(x, alpha, 5);
 
 G = [g1; g2; g3; g4; g5];
+
+figure(999); hold on;
+plot(g1);
+plot(g2);
+plot(g3);
+plot(g4);
+plot(g5);
+
 
 gfuck = [];
 ffuck = [];
