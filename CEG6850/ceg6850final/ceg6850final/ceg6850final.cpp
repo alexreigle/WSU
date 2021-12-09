@@ -17,11 +17,13 @@ string fileOut;
 
 string L1;
 string L2;
+string L3;
+string L4;
 
 string arm1; 
 string arm2;
 
-string goal = "abcdefghijklmn";
+string goal;
 string charInPlace;
 int goalIdx;
 int goalLocation;
@@ -41,6 +43,25 @@ void setL1(string l1)
 void setL2(string l2)
 {
     L2 = l2;
+}
+
+void setL3(string l3)
+{
+    L3 = l3;
+}
+
+void setL4(string l4)
+{
+    L4 = l4;
+}
+
+void initializeGoal(string l3, string l4)
+{
+    string reverseL4 = l4;
+    reverse(reverseL4.begin(), reverseL4.end());
+
+    goal = l3 + reverseL4;
+    
 }
 
 string blockdisplay(string str)
@@ -594,6 +615,90 @@ void finishMoves(/*string L1, string L2*/)
     }
 }
 
+void finalMove(/*string goal, string L3, string L4*/)
+{
+    int endLocation = -1;;
+    if (L1.size() > L2.size())
+    {
+        endLocation = 1;
+    }
+    else if (L1.size() < L2.size())
+    {
+        endLocation = 2;
+    }
+    else
+    {
+        //error
+        cout << "Error: End Location Miscalculated" << endl;
+        return;
+    }
+
+    if (endLocation == 1)
+    {
+        int szL4 = L4.size();
+
+        // L3 is in front and L4 is in back of L1 (L2 is empty)
+
+        for (int i = szL4 - 1; i >= 0; i--)
+        {
+            //pick up
+            arm1 = L1[L1.size() - 1];
+            incrementState();
+
+            //Unstack
+            L1.pop_back();
+            incrementState();
+
+            //move
+            incrementState();
+
+            //Stack
+            L2.push_back(arm1[0]);
+            incrementState();
+
+            //put down
+            arm1.pop_back();
+            incrementState();
+
+            // move arm1
+            incrementState();
+        }
+
+    }
+    else
+    {
+        int szL4 = L4.size();
+
+        // L4 is in front and L3 is in back of L2 (L1 is empty)
+
+        for (int i = szL4 - 1; i >= 0; i--)
+        {
+            //pick up
+            arm1 = L2[L2.size() - 1];
+            incrementState();
+
+            //Unstack
+            L2.pop_back();
+            incrementState();
+
+            //move
+            incrementState();
+
+            //Stack
+            L1.push_back(arm1[0]);
+            incrementState();
+
+            //put down
+            arm1.pop_back();
+            incrementState();
+
+            // move arm1
+            incrementState();
+        }
+    }
+    
+}
+
 int main(int argc, char** argv)
 {
     // Error handling on inputs
@@ -607,8 +712,11 @@ int main(int argc, char** argv)
     goalIdx = 0;
     setL1(argv[1]);
     setL2(argv[2]);
+    setL3(argv[3]);
+    setL4(argv[4]);
     incrementState();
 
+    initializeGoal(L3, L4);
 
     firstMove();
 
@@ -616,6 +724,8 @@ int main(int argc, char** argv)
     {
         finishMoves();
     }
+
+    finalMove();
 
     return 0;
 }
