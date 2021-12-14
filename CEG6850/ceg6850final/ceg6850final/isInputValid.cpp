@@ -5,15 +5,13 @@
 
 int isInputValid::isCorrectNumInputs(int argc)
 {
-    if (argc != 6)
+    if (argc != 4)
     {
         std::cout << "Error: Incorrect Number of Inputs (" << argc << "). \n\n"
             << "The three inputs required are:\n"
-            << "          1) Initial State: L1 block list (char[0-14])\n"
-            << "          2) Initial State: L2 block list (char[0-14])\n"
-            << "          3) Final State:   L1 block list (char[0-14])\n"
-            << "          4) Final State:   L2 block list (char[0-14])\n"
-            << "          5) Output folder(string)" << std::endl;
+            << "          1) L1 block list (char[0-14])\n"
+            << "          2) L1 block list (char[0-14])\n"
+            << "          3) Output folder(string)" << std::endl;
         return -1;
     }
     return 0;
@@ -21,13 +19,11 @@ int isInputValid::isCorrectNumInputs(int argc)
 
 int isInputValid::isCorrectLengthInputs(char** argv)
 {
-    if (strlen(argv[1]) + strlen(argv[2]) != 14 && strlen(argv[3]) + strlen(argv[4]) != 14)
+    if (strlen(argv[1]) + strlen(argv[2]) != 14)
     {
         std::cout << "Error: Incorrect Length of Location Inputs (must be 14 total). \n\n"
-            << "          1) Initial State: L1 block list (char[0-14], currently char[" << strlen(argv[1]) << "])\n"
-            << "          2) Initial State: L2 block list (char[0-14], currently char[" << strlen(argv[2]) << "])\n" 
-            << "          3) Final State:   L1 block list (char[0-14], currently char[" << strlen(argv[3]) << "])\n"
-            << "          4) Final State:   L2 block list (char[0-14], currently char[" << strlen(argv[4]) << "])" << std::endl;
+            << "          1) L1 block list (char[0-14], currently char[" << strlen(argv[1]) << "])\n"
+            << "          2) L2 block list (char[0-14], currently char[" << strlen(argv[2]) << "])" << std::endl;
         return -2;
     }
     return 0;

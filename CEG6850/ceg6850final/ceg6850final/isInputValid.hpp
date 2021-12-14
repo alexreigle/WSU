@@ -16,14 +16,9 @@ public:
 		{
 			L1 = argv[1];
 			L2 = argv[2];
-			L1 = argv[3];
-			L2 = argv[4];
 
 			returnVal -= areBlocksValid(L1, L2);
 			returnVal -= areBlocksRepeated(L1, L2);
-
-			returnVal -= areBlocksValid(L3, L4);
-			returnVal -= areBlocksRepeated(L3, L4);
 		}
 	}
 
@@ -38,6 +33,4 @@ private:
 	int returnVal;
 	std::string L1;
 	std::string L2;
-	std::string L3;
-	std::string L4;
 };

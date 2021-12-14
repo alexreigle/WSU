@@ -1,11 +1,11 @@
 ﻿  ceg6850final.cpp
-D:\Academia\Courses\WSU\CEG6850\CEG6850FINAL\ceg6850final\ceg6850final.cpp(77,23): warning C4018: '<': signed/unsigned mismatch
-D:\Academia\Courses\WSU\CEG6850\CEG6850FINAL\ceg6850final\ceg6850final.cpp(80,19): warning C4018: '<': signed/unsigned mismatch
-D:\Academia\Courses\WSU\CEG6850\CEG6850FINAL\ceg6850final\ceg6850final.cpp(123,23): warning C4018: '<': signed/unsigned mismatch
-D:\Academia\Courses\WSU\CEG6850\CEG6850FINAL\ceg6850final\ceg6850final.cpp(135,23): warning C4018: '<': signed/unsigned mismatch
-D:\Academia\Courses\WSU\CEG6850\CEG6850FINAL\ceg6850final\ceg6850final.cpp(343,25): warning C4018: '<': signed/unsigned mismatch
-D:\Academia\Courses\WSU\CEG6850\CEG6850FINAL\ceg6850final\ceg6850final.cpp(419,25): warning C4018: '<': signed/unsigned mismatch
-D:\Academia\Courses\WSU\CEG6850\CEG6850FINAL\ceg6850final\ceg6850final.cpp(500,25): warning C4018: '<': signed/unsigned mismatch
-D:\Academia\Courses\WSU\CEG6850\CEG6850FINAL\ceg6850final\ceg6850final.cpp(576,25): warning C4018: '<': signed/unsigned mismatch
-D:\Academia\Courses\WSU\CEG6850\CEG6850FINAL\ceg6850final\ceg6850final.cpp(119): warning C4715: 'NOOP': not all control paths return a value
+D:\Academia\Courses\WSU\CEG6850\CEG6850FINAL\ceg6850final\ceg6850final.cpp(56,23): warning C4018: '<': signed/unsigned mismatch
+D:\Academia\Courses\WSU\CEG6850\CEG6850FINAL\ceg6850final\ceg6850final.cpp(59,19): warning C4018: '<': signed/unsigned mismatch
+D:\Academia\Courses\WSU\CEG6850\CEG6850FINAL\ceg6850final\ceg6850final.cpp(102,23): warning C4018: '<': signed/unsigned mismatch
+D:\Academia\Courses\WSU\CEG6850\CEG6850FINAL\ceg6850final\ceg6850final.cpp(114,23): warning C4018: '<': signed/unsigned mismatch
+D:\Academia\Courses\WSU\CEG6850\CEG6850FINAL\ceg6850final\ceg6850final.cpp(322,25): warning C4018: '<': signed/unsigned mismatch
+D:\Academia\Courses\WSU\CEG6850\CEG6850FINAL\ceg6850final\ceg6850final.cpp(398,25): warning C4018: '<': signed/unsigned mismatch
+D:\Academia\Courses\WSU\CEG6850\CEG6850FINAL\ceg6850final\ceg6850final.cpp(479,25): warning C4018: '<': signed/unsigned mismatch
+D:\Academia\Courses\WSU\CEG6850\CEG6850FINAL\ceg6850final\ceg6850final.cpp(555,25): warning C4018: '<': signed/unsigned mismatch
+D:\Academia\Courses\WSU\CEG6850\CEG6850FINAL\ceg6850final\ceg6850final.cpp(98): warning C4715: 'NOOP': not all control paths return a value
   ceg6850final.vcxproj -> D:\Academia\Courses\WSU\CEG6850\CEG6850FINAL\Debug\ceg6850final.exe
