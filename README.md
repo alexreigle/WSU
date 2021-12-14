@@ -1,10 +1,8 @@
 # WSU Graduate Program Work
 
 ## CEG6850 - Foundations in A.I.
-A course in the logical foundations of the math/language used to develop the earliest A.I.
+A course in the logical foundations of the math/language used to develop the earliest A.I. This course is primarily a course in applied set theory.
         - Textbook: [Logical Foundations of Artificial Intelligence](https://www.sciencedirect.com/book/9780934613316/logical-foundations-of-artificial-intelligence "PDF Link")
-        
-        - This course is primarily a course in applied set theory.
 
 ## CEG 7850 - Digital Image Processing
 An overview in the most common and useful processing techniques.
