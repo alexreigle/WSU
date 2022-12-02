@@ -5,6 +5,11 @@ A course in the logical foundations of the math/language used to develop the ear
 
 Textbook: [Logical Foundations of Artificial Intelligence](https://www.sciencedirect.com/book/9780934613316/logical-foundations-of-artificial-intelligence "PDF Link")
 
+## CEG 7360 - Distributed Computing
+A course that combines functional application and programming of FPGAs, Microprocessers, and Host PCs.
+
+Textbook: No Textbook was used or referenced.
+
 ## CEG 7850 - Digital Image Processing
 An overview in the most common and useful processing techniques.
 
