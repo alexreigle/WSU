@@ -1,0 +1,46 @@
+m255
+K4
+z2
+!s99 nomlopt
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Academia/Courses/WSU/CEG7360/FPGA2/simulation/modelsim
+T_opt
+!s110 1663196075
+VM?eIAIo[hXB]0InQk?ZI93
+04 8 4 work Problem2 fast 0
+=1-509a4cceae32-63225baa-299-4f9c
+!s124 OEM10U1 
+o-quiet -auto_acc_if_foreign -work work
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.2;73
+vProblem2
+!s110 1663196051
+!i10b 1
+!s100 4BU2Qi>@Nd3O8[kd87>_e2
+ITGO^X6m88^?aE36D;m0Az1
+R0
+w1663195608
+8D:/Academia/Courses/WSU/CEG7360/FPGA2/Problem2.v
+FD:/Academia/Courses/WSU/CEG7360/FPGA2/Problem2.v
+!i122 0
+L0 1 15
+VDg1SIo80bB@j0V0VzS_@n1
+OL;L;2021.2;73
+r1
+!s85 0
+31
+!s108 1663196050.000000
+!s107 D:/Academia/Courses/WSU/CEG7360/FPGA2/Problem2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academia/Courses/WSU/CEG7360/FPGA2|D:/Academia/Courses/WSU/CEG7360/FPGA2/Problem2.v|
+!i113 0
+o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+!s92 -vlog01compat -work work +incdir+D:/Academia/Courses/WSU/CEG7360/FPGA2 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+n@problem2

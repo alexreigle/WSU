@@ -1,0 +1,174 @@
+// Copyright (C) 2022  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition"
+
+// DATE "10/26/2022 19:19:00"
+
+// 
+// Device: Altera EP4CE22F17C6 Package FBGA256
+// 
+
+// 
+// This Verilog file should be used for Questa Intel FPGA (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module Phase1 (
+	arduino,
+	pushButton,
+	a_out,
+	LED);
+input 	arduino;
+input 	pushButton;
+output 	a_out;
+output 	LED;
+
+// Design Ports Information
+// a_out	=>  Location: PIN_A2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LED	=>  Location: PIN_A15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// arduino	=>  Location: PIN_A8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// pushButton	=>  Location: PIN_J15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \a_out~output_o ;
+wire \LED~output_o ;
+wire \arduino~input_o ;
+wire \pushButton~input_o ;
+wire \a_out~0_combout ;
+
+
+hard_block auto_generated_inst(
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+// Location: IOOBUF_X7_Y34_N9
+cycloneive_io_obuf \a_out~output (
+	.i(\a_out~0_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\a_out~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \a_out~output .bus_hold = "false";
+defparam \a_out~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X38_Y34_N16
+cycloneive_io_obuf \LED~output (
+	.i(\arduino~input_o ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LED~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LED~output .bus_hold = "false";
+defparam \LED~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X25_Y34_N15
+cycloneive_io_ibuf \arduino~input (
+	.i(arduino),
+	.ibar(gnd),
+	.o(\arduino~input_o ));
+// synopsys translate_off
+defparam \arduino~input .bus_hold = "false";
+defparam \arduino~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X53_Y14_N1
+cycloneive_io_ibuf \pushButton~input (
+	.i(pushButton),
+	.ibar(gnd),
+	.o(\pushButton~input_o ));
+// synopsys translate_off
+defparam \pushButton~input .bus_hold = "false";
+defparam \pushButton~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y30_N8
+cycloneive_lcell_comb \a_out~0 (
+// Equation(s):
+// \a_out~0_combout  = (\arduino~input_o  & \pushButton~input_o )
+
+	.dataa(\arduino~input_o ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\pushButton~input_o ),
+	.cin(gnd),
+	.combout(\a_out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \a_out~0 .lut_mask = 16'hAA00;
+defparam \a_out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+assign a_out = \a_out~output_o ;
+
+assign LED = \LED~output_o ;
+
+endmodule
+
+module hard_block (
+
+	devpor,
+	devclrn,
+	devoe);
+
+// Design Ports Information
+// ~ALTERA_ASDO_DATA1~	=>  Location: PIN_C1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ~ALTERA_FLASH_nCE_nCSO~	=>  Location: PIN_D2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ~ALTERA_DCLK~	=>  Location: PIN_H1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ~ALTERA_DATA0~	=>  Location: PIN_H2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ~ALTERA_nCEO~	=>  Location: PIN_F16,	 I/O Standard: 2.5 V,	 Current Strength: 8mA
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \~ALTERA_ASDO_DATA1~~padout ;
+wire \~ALTERA_FLASH_nCE_nCSO~~padout ;
+wire \~ALTERA_DATA0~~padout ;
+wire \~ALTERA_ASDO_DATA1~~ibuf_o ;
+wire \~ALTERA_FLASH_nCE_nCSO~~ibuf_o ;
+wire \~ALTERA_DATA0~~ibuf_o ;
+
+
+endmodule

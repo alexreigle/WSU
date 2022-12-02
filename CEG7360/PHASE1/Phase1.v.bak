@@ -1,0 +1,9 @@
+module Phase1(input arduino, input pushBotton, output reg a_out);
+
+always@(posedge arduino)
+begin
+	if(arduino)
+		a_out = pushBotton;
+end
+
+endmodule

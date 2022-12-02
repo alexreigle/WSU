@@ -1,0 +1,6 @@
+|Problem3
+a => LessThan0.IN2
+clock => a_not~reg0.CLK
+a_not << a_not~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

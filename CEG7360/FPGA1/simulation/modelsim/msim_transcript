@@ -1,0 +1,66 @@
+# Reading pref.tcl
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2021.2 win64 Apr 14 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# do Problem1_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Questa Intel Starter FPGA Edition-64 vmap 2021.2 Lib Mapping Utility 2021.04 Apr 14 2021
+# vmap work rtl_work 
+# Copying D:/intelFPGA_lite/21.1/questa_fse/win64/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/Academia/Courses/WSU/CEG7360/FPGA1 {D:/Academia/Courses/WSU/CEG7360/FPGA1/Problem1.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 17:25:32 on Oct 19,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academia/Courses/WSU/CEG7360/FPGA1" D:/Academia/Courses/WSU/CEG7360/FPGA1/Problem1.v 
+# -- Compiling module Problem1
+# -- Compiling module F
+# 
+# Top level modules:
+# 	Problem1
+# End time: 17:25:32 on Oct 19,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim -gui -l msim_transcript rtl_work.Problem1
+# vsim -gui -l msim_transcript rtl_work.Problem1 
+# Start time: 17:25:51 on Oct 19,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.Problem1(fast)
+do exam.do
+# ** UI-Msg: (vsim-4007) A value argument is required.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]
+# Error in macro ./exam.do line 6
+# ** UI-Msg: (vsim-4007) A value argument is required.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]
+#     while executing
+# "force increment 0 0, 1 1, -r 2"
+do exam.do
+do exam.do
+do exam.do
+do exam.do
+do exam.do
+do exam.do
+# Warning: Invalid arguments 'nowave' to restart ignored.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.Problem1(fast)
+do exam.do
+# Warning: Invalid arguments 'nowave' to restart ignored.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.Problem1(fast)
+# End time: 17:36:44 on Oct 19,2022, Elapsed time: 0:10:53
+# Errors: 0, Warnings: 0

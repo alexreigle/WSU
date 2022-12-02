@@ -1,0 +1,83 @@
+# Reading pref.tcl
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2021.2 win64 Apr 14 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# do Problem3_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Questa Intel Starter FPGA Edition-64 vmap 2021.2 Lib Mapping Utility 2021.04 Apr 14 2021
+# vmap work rtl_work 
+# Copying D:/intelFPGA_lite/21.1/questa_fse/win64/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/Academia/Courses/WSU/CEG7360/FGPA3 {D:/Academia/Courses/WSU/CEG7360/FGPA3/Problem3.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 18:22:30 on Sep 28,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academia/Courses/WSU/CEG7360/FGPA3" D:/Academia/Courses/WSU/CEG7360/FGPA3/Problem3.v 
+# -- Compiling module Problem3
+# 
+# Top level modules:
+# 	Problem3
+# End time: 18:22:30 on Sep 28,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Academia/Courses/WSU/CEG7360/FGPA3 {D:/Academia/Courses/WSU/CEG7360/FGPA3/Problem3ROM.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 18:22:30 on Sep 28,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academia/Courses/WSU/CEG7360/FGPA3" D:/Academia/Courses/WSU/CEG7360/FGPA3/Problem3ROM.v 
+# -- Compiling module Problem3ROM
+# 
+# Top level modules:
+# 	Problem3ROM
+# End time: 18:22:31 on Sep 28,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+vsim -gui -l msim_transcript work.Problem3 -L altera_mf_ver
+# vsim -gui -l msim_transcript work.Problem3 -L altera_mf_ver 
+# Start time: 18:22:52 on Sep 28,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.Problem3(fast)
+# Loading work.Problem3ROM(fast)
+do Problem3.do
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.Problem3(fast)
+# Loading work.Problem3ROM(fast)
+do Problem3.do
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.Problem3(fast)
+# Loading work.Problem3ROM(fast)
+do Problem3.do
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.Problem3(fast)
+# Loading work.Problem3ROM(fast)
+do Problem3.do
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.Problem3(fast)
+# Loading work.Problem3ROM(fast)
+do Problem3.do
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.Problem3(fast)
+# Loading work.Problem3ROM(fast)
+do Problem3.do
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.Problem3(fast)
+# Loading work.Problem3ROM(fast)
+do Problem3.do
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.Problem3(fast)
+# Loading work.Problem3ROM(fast)
+# End time: 18:32:46 on Sep 28,2022, Elapsed time: 0:09:54
+# Errors: 0, Warnings: 0

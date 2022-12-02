@@ -1,0 +1,4 @@
+module Problem3(input enable, input reset, input clock, output reg[2:0] out);
+
+
+endmodule

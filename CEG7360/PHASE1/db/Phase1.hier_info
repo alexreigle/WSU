@@ -1,0 +1,8 @@
+|Phase1
+arduino => a_out.IN0
+arduino => LED.DATAIN
+pushButton => a_out.IN1
+a_out << a_out.DB_MAX_OUTPUT_PORT_TYPE
+LED << arduino.DB_MAX_OUTPUT_PORT_TYPE
+
+

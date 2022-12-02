@@ -1,0 +1,15 @@
+|Problem2
+enable => count[0]~reg0.ENA
+enable => count[2]~reg0.ENA
+enable => count[1]~reg0.ENA
+reset => count[0]~reg0.PRESET
+reset => count[1]~reg0.PRESET
+reset => count[2]~reg0.PRESET
+clock => count[0]~reg0.CLK
+clock => count[1]~reg0.CLK
+clock => count[2]~reg0.CLK
+count[0] << count[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[1] << count[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[2] << count[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

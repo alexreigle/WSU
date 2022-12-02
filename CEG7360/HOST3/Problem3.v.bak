@@ -1,0 +1,5 @@
+module Problem3(input a, output a_not)
+
+	a_not = !a;
+
+endmodule

@@ -1,0 +1,6 @@
+module FPGA4( input [4:0] C, input clk, output[2:0] D, input [2:0] data, input wren)
+
+
+
+
+Lab4FPGA myROM (.address(C),.clock(clk), .q(D),.data(data), .wren(wren));

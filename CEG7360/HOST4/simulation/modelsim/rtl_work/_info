@@ -1,0 +1,68 @@
+m255
+K4
+z2
+!s99 nomlopt
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Academia/Courses/WSU/CEG7360/HOST4/simulation/modelsim
+T_opt
+!s110 1666820217
+VleeeBN6h1n]dknEkHHB5X0
+04 13 4 work parityCounter fast 0
+=1-509a4cceae32-6359a879-23a-6b08
+!s124 OEM10U1 
+o-quiet -auto_acc_if_foreign -work work
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.2;73
+vcounter
+Z2 !s110 1666820202
+!i10b 1
+!s100 [Sf1`@XU5GG4J^QN8A9mg3
+I3a<n<91YaeLXX9<Pi]iRl0
+R0
+Z3 w1666820017
+Z4 8D:/Academia/Courses/WSU/CEG7360/HOST4/Problem4.v
+Z5 FD:/Academia/Courses/WSU/CEG7360/HOST4/Problem4.v
+!i122 0
+L0 68 14
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+Z7 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z8 !s108 1666820202.000000
+Z9 !s107 D:/Academia/Courses/WSU/CEG7360/HOST4/Problem4.v|
+Z10 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academia/Courses/WSU/CEG7360/HOST4|D:/Academia/Courses/WSU/CEG7360/HOST4/Problem4.v|
+!i113 0
+Z11 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z12 !s92 -vlog01compat -work work +incdir+D:/Academia/Courses/WSU/CEG7360/HOST4 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vparityCounter
+R2
+!i10b 1
+!s100 ?dY?^4kSI7]cCz2zb5e8B1
+I0@W^gdZnOD`Ik6ji8JEgN0
+R0
+R3
+R4
+R5
+!i122 0
+L0 62 5
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R11
+R12
+R1
+nparity@counter

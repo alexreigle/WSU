@@ -1,0 +1,23 @@
+|Problem1
+reset => count[0].ACLR
+reset => count[1].ACLR
+reset => count[2].ACLR
+reset => count[3].ACLR
+increment => count[0].CLK
+increment => count[1].CLK
+increment => count[2].CLK
+increment => count[3].CLK
+data <= F:myF.OUT
+
+
+|Problem1|F:myF
+a => OUT.IN0
+a => OUT.IN0
+b => OUT.IN0
+c => OUT.IN1
+c => OUT.IN1
+d => OUT.IN1
+d => OUT.IN1
+OUT <= OUT.DB_MAX_OUTPUT_PORT_TYPE
+
+

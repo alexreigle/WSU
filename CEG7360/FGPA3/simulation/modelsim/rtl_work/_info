@@ -1,0 +1,70 @@
+m255
+K4
+z2
+!s99 nomlopt
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Academia/Courses/WSU/CEG7360/FGPA3/simulation/modelsim
+T_opt
+!s110 1664403773
+VNg2aRGDDQfZ3fF2fC>J@L0
+04 8 4 work Problem3 fast 0
+=1-509a4cceae32-6334c93c-296-2314
+!s124 OEM10U2 
+o-quiet -auto_acc_if_foreign -work work -L altera_mf_ver
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.2;73
+vProblem3
+!s110 1664403750
+!i10b 1
+!s100 H3^5N][W>g[6I8R?`heM`0
+I7d5o;8;9aVWV`We=c8]lc1
+R0
+w1664403581
+8D:/Academia/Courses/WSU/CEG7360/FGPA3/Problem3.v
+FD:/Academia/Courses/WSU/CEG7360/FGPA3/Problem3.v
+!i122 0
+L0 1 20
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z4 !s108 1664403750.000000
+!s107 D:/Academia/Courses/WSU/CEG7360/FGPA3/Problem3.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academia/Courses/WSU/CEG7360/FGPA3|D:/Academia/Courses/WSU/CEG7360/FGPA3/Problem3.v|
+!i113 0
+Z5 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z6 !s92 -vlog01compat -work work +incdir+D:/Academia/Courses/WSU/CEG7360/FGPA3 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+n@problem3
+vProblem3ROM
+!s110 1664403751
+!i10b 1
+!s100 <@^VPoDhdI`IfFLn`M0Yk0
+IlWej_h?bgM9ii]_LagEQ[1
+R0
+w1664400386
+8D:/Academia/Courses/WSU/CEG7360/FGPA3/Problem3ROM.v
+FD:/Academia/Courses/WSU/CEG7360/FGPA3/Problem3ROM.v
+!i122 1
+L0 40 61
+R2
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Academia/Courses/WSU/CEG7360/FGPA3/Problem3ROM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academia/Courses/WSU/CEG7360/FGPA3|D:/Academia/Courses/WSU/CEG7360/FGPA3/Problem3ROM.v|
+!i113 0
+R5
+R6
+R1
+n@problem3@r@o@m

@@ -1,0 +1,13 @@
+restart -f nowave
+add wave clk
+add wave reset
+add wave D
+add wave hamm
+add wave increment
+
+force clk 0 0, 1 1 -r 2
+force increment 0 0, 1 2 -r 4
+force reset 0 0, 1 1, 0 2 -r 50
+force hamm 0 0, 1 3 -r 4
+
+run 55

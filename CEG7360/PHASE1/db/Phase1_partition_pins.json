@@ -1,0 +1,25 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "a_out",
+					"strict" : false
+				},
+				{
+					"name" : "LED",
+					"strict" : false
+				},
+				{
+					"name" : "arduino",
+					"strict" : false
+				},
+				{
+					"name" : "pushButton",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
