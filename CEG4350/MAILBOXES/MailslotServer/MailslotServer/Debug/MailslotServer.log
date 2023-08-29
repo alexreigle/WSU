@@ -1,0 +1,3 @@
+﻿  MailslotServer.cpp
+C:\Users\reigl\OneDrive\Documents\Academia\Courses\CEG4350\FinalSolutions\MAILBOXES\MailslotServer\MailslotServer\MailslotServer.cpp(49,23): warning C4018: '<': signed/unsigned mismatch
+  MailslotServer.vcxproj -> C:\Users\reigl\OneDrive\Documents\Academia\Courses\CEG4350\FinalSolutions\MAILBOXES\MailslotServer\Debug\MailslotServer.exe
